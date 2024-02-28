@@ -1,0 +1,66 @@
+CREATE TABLE tbProduto (
+	ID int PRIMARY KEY,
+	Descricao varchar(100) NOT NULL 
+);
+
+
+INSERT INTO tbProduto
+           (ID
+           ,Descricao)
+     VALUES
+           (1,'Produto 1');
+
+INSERT INTO tbProduto
+           (ID
+           ,Descricao)
+     VALUES
+           (2,'Produto 2');
+
+INSERT INTO tbProduto
+           (ID
+           ,Descricao)
+     VALUES
+           (3,'Produto 3');
+
+INSERT INTO tbProduto
+           (ID
+           ,Descricao)
+     VALUES
+           (4,'Produto 4');
+
+INSERT INTO tbProduto
+           (ID
+           ,Descricao)
+     VALUES
+           (5,'Produto 5');
+
+
+CREATE TABLE tbPedido(
+	ID int PRIMARY KEY,
+	Cliente varchar(60) NOT NULL,
+	VrTotalPedido decimal(18, 2) NOT NULL,
+	DataPedido date NOT NULL,
+	DataDigitacao date NOT NULL,
+	Observacao varchar(200) NULL
+ );
+
+CREATE TABLE tbPedidoItem(
+	ID int PRIMARY KEY,
+	PedidoID int NOT NULL,
+	ProdutoID int NOT NULL,
+	Quantidade int NOT NULL,
+	VrUnitario decimal(18, 2) NOT NULL,
+	DescontoItem decimal(18, 2) NULL,
+	VrTotalItem decimal(18, 2) NOT NULL,
+	Observacao varchar(200) NOT NULL
+ );
+
+ALTER TABLE dbo.tbPedidoItem
+   ADD CONSTRAINT FK_tbPedidoItem_PedidoID FOREIGN KEY (PedidoID)
+      REFERENCES dbo.tbPedido(ID)
+;
+
+ALTER TABLE dbo.tbPedidoItem
+   ADD CONSTRAINT FK_tbPedidoItem_ProdutoID FOREIGN KEY (ProdutoID)
+      REFERENCES dbo.tbProduto(ID)
+;
