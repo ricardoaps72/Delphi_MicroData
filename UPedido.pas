@@ -88,7 +88,8 @@ type
 
   public
     { Public declarations }
-    Pub_lIncluindo : Boolean;
+    Pub_lIncluindo, Pub_lIncluindoPedido : Boolean;
+
   end;
 
 var
@@ -123,11 +124,14 @@ end;
 
 procedure TFrmPedido.Btn_IncluirItensClick(Sender: TObject);
 begin
+  if Pub_lIncluindoPedido then
+    Btn_Salvar.Click;
   Btn_Alterar.Click;
   FrmPedido.QryItens.active := false;
   Pub_lIncluindo := true;
   FrmItensPedido.ShowModal;
   FrmPedido.QryItens.active := true;
+  Pub_lIncluindoPedido := false;
 end;
 
 procedure TFrmPedido.Btn_AlterarClick(Sender: TObject);
@@ -356,6 +360,8 @@ var
   newId : string;
 begin
 
+  Pub_lIncluindoPedido := true;
+
   if not QryPedidos.Active then
     QryPedidos.Active := true;
 
@@ -384,7 +390,7 @@ begin
   try
 
     if Edit_VrTotalPedido.Text = '' then
-      Edit_VrTotalPedido.Text := '0.001';
+      Edit_VrTotalPedido.Text := '0,001';
 
     if Edit_Observacao.Text = '' then
       Edit_Observacao.Text := '.';
@@ -404,7 +410,10 @@ begin
     MessageDlg('Falha ao incluir pedido ', mtError, [mbOk], 0);
   end;
 
-  LimparEdits(Self);
+  //LimparEdits(Self);
+
+  Edit_NumPedido.Text := Edit_ID.Text;
+  Btn_Filtrar.Click;
 
 end;
 

@@ -20,9 +20,8 @@ object FrmItensPedido: TFrmItensPedido
     Height = 41
     Align = alBottom
     TabOrder = 0
-    ExplicitLeft = 168
-    ExplicitTop = 152
-    ExplicitWidth = 185
+    ExplicitTop = 165
+    ExplicitWidth = 624
     object Btn_Confirmar: TButton
       Left = 448
       Top = 6
@@ -50,7 +49,8 @@ object FrmItensPedido: TFrmItensPedido
     Height = 166
     Align = alClient
     TabOrder = 1
-    ExplicitHeight = 145
+    ExplicitWidth = 624
+    ExplicitHeight = 165
     object Label_Produto: TLabel
       Left = 19
       Top = 7

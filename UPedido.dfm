@@ -17,11 +17,11 @@ object FrmPedido: TFrmPedido
     Top = 0
     Width = 712
     Height = 473
-    ActivePage = TabSheet_Pesquisa
+    ActivePage = TabSheet_Manutencao
     Align = alClient
     TabOrder = 0
     ExplicitWidth = 708
-    ExplicitHeight = 414
+    ExplicitHeight = 472
     object TabSheet_Pesquisa: TTabSheet
       Caption = 'Pesquisa'
       object Panel_Filtros: TPanel
@@ -31,6 +31,7 @@ object FrmPedido: TFrmPedido
         Height = 81
         Align = alTop
         TabOrder = 0
+        ExplicitWidth = 700
         object Label_NumPedido: TLabel
           Left = 8
           Top = 33
@@ -79,6 +80,7 @@ object FrmPedido: TFrmPedido
         Height = 120
         Align = alTop
         TabOrder = 1
+        ExplicitWidth = 700
         object DBGrid_Pedidos: TDBGrid
           Left = 1
           Top = 1
@@ -137,7 +139,8 @@ object FrmPedido: TFrmPedido
         Height = 242
         Align = alClient
         TabOrder = 2
-        ExplicitHeight = 184
+        ExplicitWidth = 700
+        ExplicitHeight = 241
         object DBGrid_Itens: TDBGrid
           Left = 1
           Top = 1
@@ -212,7 +215,6 @@ object FrmPedido: TFrmPedido
         Height = 241
         Align = alTop
         TabOrder = 0
-        ExplicitWidth = 700
         object Label1: TLabel
           Left = 12
           Top = 8
@@ -366,8 +368,6 @@ object FrmPedido: TFrmPedido
         Height = 202
         Align = alClient
         TabOrder = 1
-        ExplicitWidth = 700
-        ExplicitHeight = 143
         object DBGrid_ItensPedido: TDBGrid
           Left = 1
           Top = 1
@@ -390,9 +390,6 @@ object FrmPedido: TFrmPedido
           Height = 41
           Align = alBottom
           TabOrder = 1
-          ExplicitLeft = 88
-          ExplicitTop = 112
-          ExplicitWidth = 185
           object Btn_IncluirItens: TButton
             Left = 11
             Top = 9
@@ -434,7 +431,7 @@ object FrmPedido: TFrmPedido
     Height = 41
     Align = alBottom
     TabOrder = 1
-    ExplicitTop = 414
+    ExplicitTop = 472
     ExplicitWidth = 708
   end
   object conexao: TADOConnection
