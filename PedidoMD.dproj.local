@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2018/09/25 22:25:56.000.610,=C:\Users\ricar\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2018/09/27 19:04:46.000.330,=C:\Users\ricar\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2018/09/27 19:14:29.000.019,=C:\Users\ricar\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2018/09/27 19:49:29.000.292,=C:\Users\ricar\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2018/09/27 20:24:46.000.418,=C:\Users\ricar\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2018/09/27 20:56:26.000.683,=C:\Users\ricar\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2021/12/07 09:17:29.000.469,=C:\Users\ricar\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2024/02/26 12:26:25.000.086,=C:\Users\ricar\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2024/02/26 12:27:59.000.934,C:\Users\ricar\OneDrive\Documentos\Embarcadero\Studio\Projects\PedidoMD\UPedido.pas=C:\Users\ricar\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2024/02/26 12:27:59.000.934,C:\Users\ricar\OneDrive\Documentos\Embarcadero\Studio\Projects\PedidoMD\UPedido.dfm=C:\Users\ricar\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.dfm</Transaction>
+    <Transaction>2024/02/26 12:28:18.000.561,C:\Users\ricar\OneDrive\Documentos\Embarcadero\Studio\Projects\PedidoMD\PedidoMD.dproj=C:\Users\ricar\OneDrive\Documentos\Embarcadero\Studio\Projects\Project1.dproj</Transaction>
+    <Transaction>2024/02/27 19:15:08.066,=C:\Users\ricar\OneDrive\Documentos\Embarcadero\Studio\Projects\PedidoMD\Unit1.pas</Transaction>
+    <Transaction>2024/02/27 19:20:36.284,C:\Users\ricar\OneDrive\Documentos\Embarcadero\Studio\Projects\PedidoMD\UItens.dfm=C:\Users\ricar\OneDrive\Documentos\Embarcadero\Studio\Projects\PedidoMD\Unit1.dfm</Transaction>
+    <Transaction>2024/02/27 19:20:36.284,C:\Users\ricar\OneDrive\Documentos\Embarcadero\Studio\Projects\PedidoMD\UItens.pas=C:\Users\ricar\OneDrive\Documentos\Embarcadero\Studio\Projects\PedidoMD\Unit1.pas</Transaction>
+  </Transactions>
+</BorlandProject>
