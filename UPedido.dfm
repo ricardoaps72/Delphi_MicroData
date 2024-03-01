@@ -31,7 +31,6 @@ object FrmPedido: TFrmPedido
         Height = 81
         Align = alTop
         TabOrder = 0
-        ExplicitWidth = 700
         object Label_NumPedido: TLabel
           Left = 8
           Top = 33
@@ -80,7 +79,6 @@ object FrmPedido: TFrmPedido
         Height = 120
         Align = alTop
         TabOrder = 1
-        ExplicitWidth = 700
         object DBGrid_Pedidos: TDBGrid
           Left = 1
           Top = 1
@@ -139,8 +137,6 @@ object FrmPedido: TFrmPedido
         Height = 242
         Align = alClient
         TabOrder = 2
-        ExplicitWidth = 700
-        ExplicitHeight = 241
         object DBGrid_Itens: TDBGrid
           Left = 1
           Top = 1
@@ -215,14 +211,15 @@ object FrmPedido: TFrmPedido
         Height = 241
         Align = alTop
         TabOrder = 0
-        object Label1: TLabel
+        ExplicitWidth = 700
+        object Label_ID: TLabel
           Left = 12
           Top = 8
           Width = 11
           Height = 15
           Caption = 'ID'
         end
-        object Label2: TLabel
+        object Label_Cliente: TLabel
           Left = 12
           Top = 56
           Width = 37
@@ -236,21 +233,21 @@ object FrmPedido: TFrmPedido
           Height = 15
           Caption = 'Vr Total Pedido R$'
         end
-        object Label4: TLabel
+        object Label_DataDigitacao: TLabel
           Left = 172
           Top = 8
           Width = 74
           Height = 15
           Caption = 'DataDigitacao'
         end
-        object Label5: TLabel
+        object Label_DataPedido: TLabel
           Left = 278
           Top = 8
           Width = 61
           Height = 15
           Caption = 'DataPedido'
         end
-        object Label6: TLabel
+        object Label_Observacao: TLabel
           Left = 12
           Top = 152
           Width = 62
@@ -278,9 +275,9 @@ object FrmPedido: TFrmPedido
           OnClick = Btn_NovoClick
         end
         object Btn_Gravar: TSpeedButton
-          Left = 117
+          Left = 106
           Top = 202
-          Width = 65
+          Width = 76
           Height = 32
           Cursor = crHandPoint
           DisabledImageName = 'Btn_Gravar'
@@ -368,6 +365,8 @@ object FrmPedido: TFrmPedido
         Height = 202
         Align = alClient
         TabOrder = 1
+        ExplicitWidth = 700
+        ExplicitHeight = 201
         object DBGrid_ItensPedido: TDBGrid
           Left = 1
           Top = 1
@@ -390,6 +389,8 @@ object FrmPedido: TFrmPedido
           Height = 41
           Align = alBottom
           TabOrder = 1
+          ExplicitTop = 159
+          ExplicitWidth = 698
           object Btn_IncluirItens: TButton
             Left = 11
             Top = 9

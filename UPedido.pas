@@ -30,12 +30,12 @@ type
     QryItens: TADOQuery;
     DSItens: TDataSource;
     Panel_Pedido: TPanel;
-    Label1: TLabel;
-    Label2: TLabel;
+    Label_ID: TLabel;
+    Label_Cliente: TLabel;
     Label_vrTotalPedido: TLabel;
-    Label4: TLabel;
-    Label5: TLabel;
-    Label6: TLabel;
+    Label_DataDigitacao: TLabel;
+    Label_DataPedido: TLabel;
+    Label_Observacao: TLabel;
     Panel_Itens: TPanel;
     DBGrid_ItensPedido: TDBGrid;
     QryPedidosID: TIntegerField;
@@ -120,6 +120,9 @@ begin
     MessageDlg('Falha ao alterar pedido ', mtError, [mbOk], 0);
   end;
 
+  Edit_NumPedido.Text := Edit_ID.Text;
+  Btn_Filtrar.Click;
+
 end;
 
 procedure TFrmPedido.Btn_IncluirItensClick(Sender: TObject);
@@ -150,11 +153,11 @@ end;
 
 procedure TFrmPedido.Btn_AlterarItensClick(Sender: TObject);
 begin
-  Btn_Alterar.Click;
   Pub_lIncluindo := false;
   FrmItensPedido.ShowModal;
   FrmPedido.QryItens.active := false;
   FrmPedido.QryItens.active := true;
+  Btn_Alterar.Click;
 end;
 
 procedure TFrmPedido.Btn_ExcluirClick(Sender: TObject);
@@ -390,7 +393,7 @@ begin
   try
 
     if Edit_VrTotalPedido.Text = '' then
-      Edit_VrTotalPedido.Text := '0,001';
+      Edit_VrTotalPedido.Text := '0';
 
     if Edit_Observacao.Text = '' then
       Edit_Observacao.Text := '.';

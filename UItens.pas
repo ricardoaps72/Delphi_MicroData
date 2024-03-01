@@ -36,6 +36,7 @@ type
     procedure calculaTotal;
     procedure LimparEdits(Form: TForm);
     function retornaNewId(): integer;
+    function produtoExiste(ProdutoID: integer): boolean;
 
   public
     { Public declarations }
@@ -140,20 +141,44 @@ procedure TFrmItensPedido.Edit_ProdutoExit(Sender: TObject);
 begin
   if Edit_Produto.Text <> '' then
   begin
-    with FrmPedido.Qry do
+    if FrmPedido.Pub_lIncluindo then
     begin
+      if not produtoExiste(strtoint(Edit_Produto.Text)) then
+      begin
+        with FrmPedido.Qry do
+        begin
+          close;
+          sql.Clear;
+          sql.Add('select ID, Descricao from tbProduto where ID = :ID');
+          Parameters.ParamByName('ID').Value :=  strToInt(Edit_Produto.Text);
+          open;
+          Edit_Descricao.Text := FieldByName('Descricao').AsString;
+        end;
 
-      close;
-      sql.Clear;
-      sql.Add('select ID, Descricao from tbProduto where ID = :ID');
-      Parameters.ParamByName('ID').Value :=  strToInt(Edit_Produto.Text);
-      open;
-      Edit_Descricao.Text := FieldByName('Descricao').AsString;
+        if Edit_Descricao.Text = '' then
+          MessageDlg(' Produto não encontrado ', mtError, [mbOk], 0);
+      end
+      else
+      begin
+        MessageDlg(' Produto já foi inserido ', mtError, [mbOk], 0);
+        abort;
+      end;
+    end
+    else
+    begin
+      with FrmPedido.Qry do
+      begin
+        close;
+        sql.Clear;
+        sql.Add('select ID, Descricao from tbProduto where ID = :ID');
+        Parameters.ParamByName('ID').Value :=  strToInt(Edit_Produto.Text);
+        open;
+        Edit_Descricao.Text := FieldByName('Descricao').AsString;
+      end;
+
+      if Edit_Descricao.Text = '' then
+        MessageDlg(' Produto não encontrado ', mtError, [mbOk], 0);
     end;
-
-    if Edit_Descricao.Text = '' then
-      MessageDlg(' Produto não encontrado ', mtError, [mbOk], 0);
-
   end;
 end;
 
@@ -260,5 +285,25 @@ begin
 
 end;
 
+function TFrmItensPedido.produtoExiste(ProdutoID : integer) : boolean;
+var
+  PedidoID : integer;
+begin
+  PedidoID := strtoint(FrmPedido.Edit_ID.Text);
+  with FrmPedido.Qry do
+  begin
+    close;
+    sql.Clear;
+    sql.Add('select tbPedidoItem.ProdutoID from tbPedidoItem where ');
+    sql.Add(' tbPedidoItem.PedidoID = :PedidoID and tbPedidoItem.ProdutoID = :ProdutoID ');
+    Parameters.ParamByName('ProdutoID').value := ProdutoID;
+    Parameters.ParamByName('PedidoID').value := PedidoID;
+    open;
+    if Fields[0].AsString <> '' then
+      result := true
+    else
+      result := false;
+  end;
+end;
 
 end.
