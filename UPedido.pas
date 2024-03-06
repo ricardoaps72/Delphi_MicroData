@@ -208,9 +208,8 @@ begin
       Qry.ExecSQL;
       MessageDlg('Item excluido ', mtInformation, [mbOk], 0);
       QryItens.Active := true;
-
       FrmItensPedido.calculaTotalPedido;
-
+      Btn_Alterar.Click;
     end;
   except
     MessageDlg('Falha ao excluir Item ', mtError, [mbOk], 0);
